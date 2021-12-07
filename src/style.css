@@ -30,7 +30,7 @@ li:first-letter {
   /*background: linear-gradient(#dddbdb, #0a87e1);*/
   max-width: 600px;
 }
-.col-sm-4.cloudIcon {
+.col-sm-4.weatherIcon {
   font-size: 60px;
   text-align: center;
 }
