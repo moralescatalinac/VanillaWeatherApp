@@ -1,3 +1,74 @@
 h1 {
-  color: pink;
+  color: #404040;
+  font-size: 20px !important;
+}
+h2 ul {
+  padding-inline-start: 0;
+}
+li {
+  list-style-type: none;
+  font-size: 18px;
+}
+.weatherUnits {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-left: 0.3rem;
+}
+.container {
+}
+.weatherContainer {
+  border: 1px solid #dbdbdb;
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 8px;
+  /*background: linear-gradient(#dddbdb, #0a87e1);*/
+  max-width: 600px;
+}
+.col-sm-4.cloudIcon {
+  font-size: 60px;
+  text-align: center;
+}
+.col-sm-8.tempText {
+  font-size: 50px;
+  align-self: center;
+  display: inline-flex;
+}
+.forcastBox .col-sm {
+  text-align: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: aliceblue;
+  margin: 0 0.5rem;
+  padding: 1rem;
+  background: linear-gradient(#dddbdb, #efefef73);
+  border-radius: 6px;
+  font-size: 18px;
+}
+.weatherIcon {
+  font-size: 35px;
+}
+.col-sm-12.forecastHeader {
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 18px;
+}
+.col-sm-6.currentTownText {
+  font-size: 38px;
+  padding-left: 3rem;
+}
+#currentDateTime {
+  font-size: 16px;
+}
+.row.forcastBox {
+  padding: 0 3rem;
+}
+.col-sm-12.footer a {
+  text-decoration: none;
+  color: #2f55af;
+  font-size: 13px;
+}
+.col-sm-12.footer a:hover {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
 }

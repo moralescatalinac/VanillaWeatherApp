@@ -11,11 +11,55 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <h1>Hello world</h1>
-    <a href="" class="btn btn-primary">click here</a>
+    <div class="container">
+      <div class="weatherContainer">
+      <div class="row">
+        <div class="col-sm-6 currentTownText" id="showCitySearched"><h1>Springfield, NJ</h1><h2><ul><li>Friday, 05:00</li>
+        <li>Clear</li>
+      </ul></h2></div>
+        <div class="col-sm-6">
+          <form id="myForm">
+          <div class="input-group" id="searchForm">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search another city"
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+              id="searchCityInput"
+            />
+            <input
+              class="btn btn-outline-secondary"
+              type="submit"
+              id="button-addon2"
+              value="search"
+            /></form>
+          </div>
+      </div>
+    
+          <div class="row cwContainer">
+            <div class="col-sm-6">
+              <div class="row">
+            <div class="col-sm-4 cloudIcon">🌥</div>
+            <div class="col-sm-8 tempText" id="cityTemp">47 <div class="weatherUnits">°C | °F </div></div>
+          </div></div>
+          <div class="col-sm-6">
+          <ul>
+            <li>Precipitation : 0%</li>
+            <li>Humidity: 72%</li>
+            <li>Wind: 2mph</li>
+          </ul>
+
+          </div>
+          </div>
+         
+        </div>
+          </div>
+
     <script src="src/app.js"></script>
   </body>
 </html>
