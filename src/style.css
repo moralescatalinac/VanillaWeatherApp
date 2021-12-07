@@ -15,9 +15,9 @@ li:first-letter {
   text-transform: capitalize;
 }
 .weatherUnits {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
-  margin-top: 8px;
+  margin-top: 13px;
   margin-left: 0.3rem;
 }
 .container {
@@ -76,4 +76,10 @@ li:first-letter {
   text-decoration: none;
   color: #fff;
   font-size: 14px;
+}
+.weatherUnits a {
+  text-decoration: none;
+}
+.weatherUnits .active {
+  color: #404040;
 }
