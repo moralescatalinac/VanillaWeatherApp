@@ -18,8 +18,8 @@
     <div class="container">
       <div class="weatherContainer">
       <div class="row">
-        <div class="col-sm-6 currentTownText" id="showCitySearched"><h1>Springfield, NJ</h1><h2><ul><li>Friday, 05:00</li>
-        <li>Clear</li>
+        <div class="col-sm-6 currentTownText"><h1 id="showCitySearched"></h1><h2><ul><li>last updated at: <span id="dateText"></span></li>
+        <li id="weatherDescription">Clear</li>
       </ul></h2></div>
         <div class="col-sm-6">
           <form id="myForm">
@@ -45,13 +45,12 @@
             <div class="col-sm-6">
               <div class="row">
             <div class="col-sm-4 cloudIcon">🌥</div>
-            <div class="col-sm-8 tempText" id="cityTemp">47 <div class="weatherUnits">°C | °F </div></div>
+            <div class="col-sm-8 tempText"><div id="cityTemp">47</div> <div class="weatherUnits">°C | <a href="" class="" id="">°F </a></div></div>
           </div></div>
           <div class="col-sm-6">
           <ul>
-            <li>Precipitation : 0%</li>
-            <li>Humidity: 72%</li>
-            <li>Wind: 2mph</li>
+            <li>Humidity: <span id="humidityText"></span>%</li>
+            <li>Wind: <span id="windText"></span> km/h</li>
           </ul>
 
           </div>
