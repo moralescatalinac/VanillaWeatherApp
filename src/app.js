@@ -62,7 +62,7 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   let apiKey = "3a24228f47a1c5328cc8990852342e05";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -94,7 +94,7 @@ function displayTemperature(response) {
 
 function search(city) {
   let apiKey = "3a24228f47a1c5328cc8990852342e05";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -103,14 +103,14 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#searchCityInput");
   search(cityInputElement.value);
 }
-function showFarenheightTemp(event) {
+/* function showFarenheightTemp(event) {
   event.preventDefault();
   celsiusLink.classList.remove("active");
   farenheightLink.classList.add("active");
   let farenheightTemp = (celsiusTemp * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#cityTemp");
   temperatureElement.innerHTML = Math.round(farenheightTemp);
-}
+} */
 
 function showCelsiusTemp(event) {
   event.preventDefault();
@@ -125,8 +125,8 @@ let celsiusTemp = null;
 let form = document.querySelector("#myForm");
 form.addEventListener("submit", handleSubmit);
 
-let farenheightLink = document.querySelector("#farenheight-Link");
-farenheightLink.addEventListener("click", showFarenheightTemp);
+/* let farenheightLink = document.querySelector("#farenheight-Link");
+farenheightLink.addEventListener("click", showFarenheightTemp); */
 
 let celsiusLink = document.querySelector("#celsius-Link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
