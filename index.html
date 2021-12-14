@@ -18,9 +18,9 @@
     <div class="container">
       <div class="weatherContainer">
       <div class="row">
-        <div class="col-sm-6 currentTownText"><h1 id="showCitySearched"></h1><h2><ul><li>last updated at: <span id="dateText"></span></li>
-        <li id="weatherDescription">Clear</li>
-      </ul></h2></div>
+        <div class="col-sm-6 currentTownText"><h1 id="showCitySearched"></h1><h2>
+        <div class="weather-Description" id="weatherDescription"></div>
+      </h2></div>
         <div class="col-sm-6">
           <form id="myForm">
           <div class="input-group" id="searchForm">
@@ -55,10 +55,15 @@
 
           </div>
           </div>
+          <div class="weatherForecast" id="weather-forecast">
+            
+          </div>
          
         </div>
-         <div class="col-sm-12 footer"><a href="https://github.com/moralescatalinac" target="_blank">Check out my Github Repository</a></div>
+        <div class="lastUpdateText">Last updated at: <span id="dateText"></span></div>
+   
           </div>
+         <div class="col-sm-12 footer"><a href="https://github.com/moralescatalinac" target="_blank">Check out my Github Repository</a></div>
 
     <script src="src/app.js"></script>
   </body>

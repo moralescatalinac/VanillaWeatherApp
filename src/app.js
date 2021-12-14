@@ -21,6 +21,51 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tues"];
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+              <div class="col-2">
+                <div class="weather-forecast-day">${formatDay(
+                  forecastDay.dt
+                )}</div>
+                 <img src="http://openweathermap.org/img/wn/${
+                   forecastDay.weather[0].icon
+                 }@2x.png" width="60px">
+                 <div class="weather-forecast-temp"><span class="maxTemp"> ${Math.round(
+                   forecastDay.temp.max
+                 )}°</span> <span class="minTemp"> ${Math.round(
+          forecastDay.temp.min
+        )}°</span></div>
+              </div>
+              `;
+    }
+  });
+  forecastHTML = forecastHTML + "</div>";
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "3a24228f47a1c5328cc8990852342e05";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#cityTemp");
@@ -43,6 +88,8 @@ function displayTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -74,6 +121,7 @@ function showCelsiusTemp(event) {
 }
 
 let celsiusTemp = null;
+
 let form = document.querySelector("#myForm");
 form.addEventListener("submit", handleSubmit);
 
@@ -84,3 +132,4 @@ let celsiusLink = document.querySelector("#celsius-Link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
 search("New York");
+displayForecast();
